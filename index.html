@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRODIGY_WD_05 — Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <h1>Weather <span>App</span></h1>
+  <p class="subtitle">Search any city or use your current location</p>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Enter city name... e.g. Hyderabad" onkeydown="if(event.key==='Enter') fetchWeather()" />
+    <button onclick="fetchWeather()">Search</button>
+    <button class="location-btn" onclick="getLocation()" title="Use my location">📍</button>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-msg" id="errorMsg"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader"></div>
+
+  <!-- WEATHER CARD -->
+  <div class="weather-card" id="weatherCard">
+
+    <!-- MAIN -->
+    <div class="main-card">
+      <div class="city-name" id="cityName">—</div>
+      <div class="country" id="countryName">—</div>
+      <div class="weather-icon" id="weatherIcon">🌤️</div>
+      <div class="temperature" id="temperature">—</div>
+      <div class="feels-like" id="feelsLike">Feels like —</div>
+      <div class="condition" id="condition">—</div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-icon">💧</span>
+        <div>
+          <div class="stat-label">Humidity</div>
+          <div class="stat-value" id="humidity">—</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">💨</span>
+        <div>
+          <div class="stat-label">Wind Speed</div>
+          <div class="stat-value" id="windSpeed">—</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">👁️</span>
+        <div>
+          <div class="stat-label">Visibility</div>
+          <div class="stat-value" id="visibility">—</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🌡️</span>
+        <div>
+          <div class="stat-label">Pressure</div>
+          <div class="stat-value" id="pressure">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUN TIMES -->
+    <div class="sun-card">
+      <div class="sun-item">
+        <div class="sun-icon">🌅</div>
+        <div class="sun-label">Sunrise</div>
+        <div class="sun-time" id="sunrise">—</div>
+      </div>
+      <div class="sun-divider"></div>
+      <div class="sun-item">
+        <div class="sun-icon">🌇</div>
+        <div class="sun-label">Sunset</div>
+        <div class="sun-time" id="sunset">—</div>
+      </div>
+    </div>
+
+    <!-- DATE TIME -->
+    <div class="datetime" id="datetime">—</div>
+
+  </div>
+
+  <footer>Prodigy InfoTech Internship — Task WD-05</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
